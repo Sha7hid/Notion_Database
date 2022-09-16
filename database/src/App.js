@@ -33,7 +33,7 @@ function App() {
 <textarea onChange={(e) => setExtraInfo(e.target.value)} rows={10} cols={25}/>
 <div>
   <button onClick={submitFormToNotion}>
-submit to Notion
+Submit To Notion
   </button>
 </div>
 </div>

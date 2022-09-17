@@ -17,7 +17,17 @@ async function addItem(text) {
               }
             }
           ]
+        },
+        phoneno:{
+            number:[
+                {
+                    "number":{
+                        "content": number
+                    }
+                }
+            ]
         }
+
       },
     })
     console.log(response)
@@ -26,4 +36,4 @@ async function addItem(text) {
     console.error(error.body)
   }
 }
-addItem("Shahid")
+addItem("Shahid",123)

@@ -26,5 +26,4 @@ async function addItem(text) {
     console.error(error.body)
   }
 }
-
 addItem("Shahid")

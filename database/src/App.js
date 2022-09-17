@@ -24,7 +24,7 @@ function App() {
    
   <div className='App'>
 <div style={{maxWidth:"500px",margin:"0 auto"}}>
-<h1>Interested in learning more? Put your info below</h1>
+<h1>Interested in learning more?</h1>
 <p>Name</p>
 <input type="text" id="name" onChange={(e) => setName(e.target.value)}/>
 <p>Phone Number</p>

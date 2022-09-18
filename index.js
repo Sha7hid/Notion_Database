@@ -1,8 +1,9 @@
 import { Client } from "@notionhq/client"
+import NOTION_KEY from './secret';
+import NOTION_DATABASE_ID from './secret'
+const notion = new Client({ auth: NOTION_KEY })
 
-const notion = new Client({ auth: process.env.NOTION_KEY })
-
-const databaseId = process.env.NOTION_DATABASE_ID
+const databaseId = NOTION_DATABASE_ID
 
 async function addToDatabase(databaseId, name, number, extra) {
     try {

@@ -51,4 +51,4 @@ async function addToDatabase(databaseId, name, number, extra) {
         console.error(error.body);
     }
 }
-addToDatabase(databaseId, 'shahid','7994959712','haise');
+addToDatabase(databaseId, 'shahid','7994959712','hello');

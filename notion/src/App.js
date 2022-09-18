@@ -1,23 +1,61 @@
-import logo from './logo.svg';
 import './App.css';
+import { Client } from "@notionhq/client"
 
+const notion = new Client({ auth: process.env.NOTION_KEY })
+
+const databaseId = process.env.NOTION_DATABASE_ID
+
+async function addToDatabase(databaseId, name, number, extra) {
+    try {
+        const response = await notion.pages.create({
+            parent: {
+                database_id: databaseId,
+            },
+            properties: {
+                'Name': {
+                    type: 'title',
+                    title: [
+                    {
+                        type: 'text',
+                        text: {
+                            content: name,
+                        },
+                    },
+                    ],
+                },
+                'PhoneNumber' : {
+                        type: 'rich_text',
+                        rich_text: [
+                        {
+                            type: 'text',
+                            text: {
+                                content: number,
+                            },
+                        }
+                        ],
+                },
+                'ExtraInformation' : {
+                    type: 'rich_text',
+                    rich_text: [
+                    {
+                        type: 'text',
+                        text: {
+                            content: extra,
+                        },
+                    }
+                    ],
+            },
+            }    
+        });
+        console.log(response);
+    } catch (error) {
+        console.error(error.body);
+    }
+}
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p>hello</p>
     </div>
   );
 }
